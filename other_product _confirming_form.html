@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png/jpg" href="logo.jpg">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Checkout form</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+<body style="background: #EEEEEE;">
+	
+
+<header class="second">
+<div class="col-sm-3-9 col-md-9-12">
+	<div class="text-center" style="background:linear-gradient(75deg,blue,lightgreen,lightgreen,lightgreen,lightgreen,blue);">
+<span id="as">&#65021;<br>In the Name of Allah the Most Beneficent and the Most Merciful</span>
+</div>
+</div>
+</header>
+
+  <a href="index.html"><img src="loa.png" width="290px" height="95px" class="mx-auto d-flex"></a>
+  
+<hr style="margin-top:-10px;box-shadow: 2px 2px 8px #433C3C">
+
+
+  <style>
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 8%;
+                margin-left: 8%;
+            }
+           
+            select{
+             border-radius: 0.4rem; 
+            }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+            
+    </style>
+
+
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h1 class="text-center text-success">Check out form</h1>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                      <textarea name="timein" class="form-control" id="howDate" style="visibility: hidden;"></textarea>
+  <textarea id="result1" cols="1" rows="1" required="" class="form-control" style="visibility: hidden;" name="ITotal"></textarea>
+                                        <div class="form-group">
+                                            <input type="text" name="Name" class="form-control" placeholder="Enter Full Name*" value="" id="aa1" required="required"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="Email" class="form-control" placeholder="Enter Email *" id="aa2" value="" required="required"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Phone" class="form-control" placeholder="Enter Contact Number *" id="aa3" value="" required="required" max="11" min="0" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Anotherphone" class="form-control"  placeholder="Second Contact Number (optional)"/>
+                                        </div>
+                                        <div class="form-group">
+                                          <label>Country : </label>
+                                            <select class="form-control" name="Country" required="required">
+                                              <option value="Pakistan">Pakistan</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Adress" class="form-control" placeholder="Enter Your Address *" id="aa5" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Town" class="form-control" placeholder="Town/City *" id="aa6" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                          <label>Your State : </label>
+                                            <select class="form-control" name="State" required="required">
+                                              <option value="Sindh">Sindh</option>
+                                              <option value="Balochistan">Balochistan</option>
+                                              <option value="Punjab">Punjab</option>
+                                            <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                                            <option value="Islamabad">Islamabad</option>
+                                              <option value="FATA">FATA</option>
+                                              <option value="Azad Kashmir">Azad Kashmir</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                          <textarea class="form-control" name="com" placeholder="Any comments (optional)"></textarea>
+                                        </div>
+                                        Payment method <i class="far fa-money-bill-alt"></i>
+
+ <div class="form-group" style="margin-top: 10px;" id="che" onchange="las(this);">                                      
+      <label> We have just <span class="font-weight-bold">Cash on delivery</span> service <img src="cash.png" width="25px" height="25px"></label><br>
+           <label class="ml-1">Local service (only in karachi) <span style="color:;"> (time 1-2 days)</label>
+           <input type="radio"  name="Service" required="required" value="Local service" class="ml-2" id="rado" onclick="sun(this);charge(this);copy();">
+    <br>
+           <label class="ml-1">TCS service <span style="color:#42415A;"></span> (time 3-7 days)</label>
+           <input type="radio"  required="required" onclick="summ(this);charge(this);copy();" name="Service" value="TCS" id="radoo" class="ml-2">
+    </div>
+<hr>
+<h6 class="text-center">Total Cost</h6>
+<p>Items : <span id="store"></span></p>
+<p>Item quantity : <span id="store2"></span></p>
+<p>Item total : <span id="result"></span></p>
+<p>Service charges : <span id="shoo"></span></p>
+<!-- <p>Delivery charges : <span id="val1"></span></p> -->
+<p style="color: blue;">Grand total : <span id="sum"></span></p>
+<hr>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" id="send" class="btnSubmit btn-block text-white bg-primary font-weight-bold" value="Check out" onclick="displayDate(this);wait();getpassword();"/>
+                                        </div>
+                                        <div class="form-group">
+  
+  <textarea id="restt" cols="1" rows="1" class="form-control" style="visibility: hidden;"></textarea>
+  <textarea id="restt1" cols="1" rows="1" class="form-control" name="Product1" style="visibility: hidden;"></textarea>
+   <textarea id="rta" cols="1" rows="1" class="form-control" name="Quantity1" style="visibility: hidden;"></textarea>
+   <textarea name="orderno" cols="1" rows="1" class="form-control" id="order" style="visibility: hidden;"></textarea>
+
+</div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+<script>
+  function copy(){
+        document.getElementById("b").value=
+        document.getElementById("restt1").value;
+    }
+    function wait(){
+      var a=document.getElementById("aa1");
+      var q=document.getElementById("aa2");
+      var w=document.getElementById("aa3");
+      var s=document.getElementById("aa5");
+      var d=document.getElementById("aa6");
+      var r=document.getElementById("aa7");
+      var e=document.getElementById("rado");
+       
+      if(a!=="" && q!=="" && w!=="" && s!=="" && d!=="" && r!=="" && e.checked===true)
+      {
+var a=document.getElementById("send");
+a.value="Sending.....";
+}
+}    
+</script>
+<script>
+  function getpassword(){
+    var chars="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    var passwordlength=8;
+    var password="";
+    for(var i=0; i<passwordlength; i++)
+    {
+var random=Math.round(Math.random() * chars.length);
+password +=chars.substring(random,random+1)
+    }
+    document.getElementById("order").value=password;
+  }
+</script>
+          <script>
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbynpLlBwO5Suy1rgtF3SVZhZ_09YzRGtBSglyWilaCfTPcA3J1k/exec'
+            const form = document.forms['google-sheet']
+          
+          function displayDate()
+{
+document.getElementById("howDate").innerHTML = Date();
+} 
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Message sent Thanks for Contacting us..! we will deliver your parsal Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+                
+document.getElementById("result").innerHTML=localStorage.getItem("text")
+document.getElementById("result1").innerHTML=localStorage.getItem("textman")
+// document.getElementById("restt").innerHTML=localStorage.getItem("tool")
+document.getElementById("restt1").innerHTML=localStorage.getItem("tool1")
+document.getElementById("rta").innerHTML=localStorage.getItem("ham")
+document.getElementById("store").innerHTML=localStorage.getItem("hamna")
+document.getElementById("store2").innerHTML=localStorage.getItem("hamnana")
+ // document.getElementById("quant").innerHTML=localStorage.getItem("texttvalue")
+ // document.getElementById("itm").innerHTML=localStorage.getItem("textttvalue")
+
+function summ()
+{
+var cho=parseInt(document.getElementById("result1").value);
+var ch=0;
+document.getElementById("sum").innerHTML=cho+ch+" Rs (except TCS charges)";
+}
+function sun()
+{
+var choo=parseInt(document.getElementById("result1").value);
+var cho=200;
+document.getElementById("sum").innerHTML=choo+cho+" Rs";
+}
+      
+     function charge(){
+var ra=document.getElementById("rado");
+var raa=document.getElementById("radoo");
+if(ra.checked===true)
+{
+document.getElementById("shoo").innerHTML="200 Rs";
+}
+else if(raa.checked===true)
+{
+document.getElementById("shoo").innerHTML="We will let you known on your gmail";
+
+}
+
+     }
+
+          </script>
+
+
+
+
+<footer id="foot" class="page-footer bg-dark">
+  <div class="bg-primary">
+    <div class="container text-white">
+      <div class=" py-1 d-flex align-items-center">
+        <div class="col-md-12 text-center ">
+          <a href="https://twitter.com/fidarauf87" target="blank"><i class="fab fa-twitter text-white mr-4 fa-lg"></i>  <!-- <img src="twitter (1).png" width="30px" height="30px"> --></a>
+          <a href="https://www.instagram.com/fida.urrehman.73/?hl=en" target="blank"><i class="fab fa-instagram text-white mr-4 fa-lg"></i> <!-- <img src="instagram (2).png" width="30px" height="30px"> --></a>
+          <a href="https://www.facebook.com/ARQ-Sons-Enterprises-1363418577132969/" target="blank"><i class="fab fa-facebook text-white mr-4 fa-lg"></i><!-- <img src="facebook (1).png" width="30px" height="30px"> --></a>
+          <a href="https://www.linkedin.com/in/fida-ur-rehman-41690471" target="blank"><i class="fab fa-linkedin text-white mr-4 fa-lg"></i><!-- <img src="linkedin.png" width="30px" height="30px"> --></a>
+          <a href="https://mail.google.com/mail/u/0/?pc=topnav-about-n-en#inbox?compose=GTvVlcSPFdNDlKmcVTpMlzWQZTxRZDLGJQCkLZbPLtNRlNbpHSJGvKtVVmNWHdxsptXmjMBBNQvCT" target="blank"><i class="far fa-envelope text-white mr-4 fa-lg"></i><!-- <img src="facebook (1).png" width="30px" height="30px"> --></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="back">
+  <div class="container text-center text-md-center mt-4">
+    <div class="row">
+    <div class=" py-1 col-md-3 mx-auto mb-2">
+      <h6 class="text-success font-weight-bold">ADDRESS</h6>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;height: 2px;">
+      <p class="mt-2 text-$teal-800 text-justify"><b style="text-decoration: underline;">Head Office</b> : 70,71 3rd Floor Habib Chamber near Civic Center Block-14 University Road Gulshan-e-Iqbal Karachi<br>
+        <b style="text-decoration: underline;">Regional Office</b> : L-839 Sector-5/C-2 North Karachi,Khi</p>
+    </div>
+    <div class="col-md-3 mx-auto mb-4">
+      <h6 class="text-success font-weight-bold">CONTACT NO</h6>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;height: 2px;">
+      <p class="mt-2 text-$teal-800"><b>Ph</b> : <a href="tel:021-34942227" id="hover1">021-34942227</a><br><b>Cell</b> :<a href="tel:0312-2022513" id="hover1">0312-2022513</a><br><b>Whatsapp</b> : <a href="tel:0345-6137908" id="hover1">0345-6137908</a><br><a href="tel:0336-2291314" id="hover1">0336-2291314</a><p><button style="width: 120px;border-radius: 120px;" class="bg-primary"><a href="mal.html" class="font-weight-bold text-white" style="text-decoration: none;">Any Query</a></button></p>
+    </div>
+    <div class="col-md-3 mx-auto mb-4">
+      <h6 class="text-success font-weight-bold">GMAIL</h6>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;height: 2px;">
+      <p class="mt-2 text-$teal-800 ">arqandsonsenterprises@gmail.com</p>
+      <p class="mt-2 text-$teal-800 ">info@arqsonsenterprises.com</p>
+    </div>
+    <div class="col-md-3 mx-auto mb-1">
+      <h6 class="text-success font-weight-bold">QR CODE</h6>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;height: 2px;">
+      <br><img src="qr.png" height="150px" width="150px"><br>Price list
+    </div>
+
+    
+  </div>
+</div>
+</div>  
+</footer>
+
+
+
+<footer class="page-footer">
+<div class="bg-primary">
+<div class="container">
+<div class="row align-items-center ">
+<div class="col-md-12 text-center">
+  <p class="text-white font-weight-bold" style="margin-top: 20px;">&#169;Copywrite 2021 ARQ & Sons Enterprises</p>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+
+<abbr title="Price List"><div id="list">
+<a href="https://docs.google.com/spreadsheets/d/1T1W690JVUvFTEbFDI6i086Nn7ra-tbsRpxSh-Eb4Ycg/edit?usp=sharing" target="blank"><i class="fas fa-clipboard-list fa-2x"></i></a>
+</div></abbr>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<div class="scroll">
+<a href="#"><i class="fas fa-arrow-up"></i></i></a>
+</div>
+<div id="wa">
+<div class="what">
+<a href="https://wa.me/+923456137908" target="blank"><i class="fab fa-whatsapp fa-2x"></i></a></div>
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+
